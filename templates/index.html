@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sahabat Laptop & PC Solution — Dual AI Tech Consultant</title>
+  <meta name="description" content="Layanan konsultasi AI terpercaya untuk memilih laptop dan meracik PC desktop kustom dari 500+ laptop dan 542+ komponen resmi bergaransi distributor.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+  <!-- Custom Vanilla CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="theme-dark">
+
+  <!-- APP CONTAINER -->
+  <div class="app-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <div class="brand-logo">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <div class="brand-text">
+            <h2>Sahabat Tech</h2>
+            <p>Laptop & PC Solution</p>
+          </div>
+        </div>
+        <button class="btn-icon mobile-only" id="btnCloseSidebar" aria-label="Tutup Menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- STORE INVENTORY BADGES -->
+      <div class="inventory-status-card">
+        <div class="inventory-item">
+          <div class="inv-icon laptop-icon"><i class="fa-solid fa-laptop"></i></div>
+          <div class="inv-details">
+            <span class="inv-count">500 Unit</span>
+            <span class="inv-label">Laptop Ready Stok</span>
+          </div>
+        </div>
+        <div class="inv-divider"></div>
+        <div class="inventory-item">
+          <div class="inv-icon pc-icon"><i class="fa-solid fa-computer"></i></div>
+          <div class="inv-details">
+            <span class="inv-count">542 Part</span>
+            <span class="inv-label">Komponen PC Resmi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK EXPLORER ACTIONS -->
+      <div class="sidebar-section">
+        <span class="section-title"><i class="fa-solid fa-boxes-stacked"></i> Jelajahi Stok Toko</span>
+        <button class="nav-btn" id="btnOpenLaptopModal">
+          <div class="nav-btn-icon cyan"><i class="fa-solid fa-laptop"></i></div>
+          <div class="nav-btn-text">
+            <strong>Katalog Laptop</strong>
+            <small>500 Unit Bergaransi</small>
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </button>
+
+        <button class="nav-btn" id="btnOpenPCModal">
+          <div class="nav-btn-icon green"><i class="fa-solid fa-server"></i></div>
+          <div class="nav-btn-text">
+            <strong>Gudang Komponen PC</strong>
+            <small>542 Part Siap Rakit</small>
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </button>
+
+        <button class="nav-btn" id="btnOpenRigBuilder">
+          <div class="nav-btn-icon purple"><i class="fa-solid fa-sliders"></i></div>
+          <div class="nav-btn-text">
+            <strong>Kalkulator Rakit PC</strong>
+            <small>Simulasi 8 Part Sesuai Budget</small>
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </button>
+      </div>
+
+      <!-- QUICK DISCUSSION PROMPTS -->
+      <div class="sidebar-section">
+        <span class="section-title"><i class="fa-regular fa-comments"></i> Ide Diskusi Cepat</span>
+        <div class="quick-prompts-list">
+          <button class="prompt-chip" data-prompt="Saya punya budget 10 juta, tolong racikkan semua part dari A sampai Z sampai PC-nya nyala dan siap pakai!">
+            <i class="fa-solid fa-bolt text-green"></i> Rakit PC 10 Juta Siap Nyala
+          </button>
+          <button class="prompt-chip" data-prompt="Saya sudah beli beberapa komponen sendiri di rumah, kalau minta saran untuk komponen pelengkapnya apakah bisa?">
+            <i class="fa-solid fa-puzzle-piece text-green"></i> Melengkapi Part yang Sudah Dibeli
+          </button>
+          <button class="prompt-chip" data-prompt="Saya butuh laptop budget 7-8 jutaan untuk kuliah teknik informatika dan coding, ada saran?">
+            <i class="fa-solid fa-graduation-cap text-cyan"></i> Laptop Mahasiswa 7-8 Juta
+          </button>
+          <button class="prompt-chip" data-prompt="Apakah ada laptop murah meriah dan awet yang cocok untuk anak sekolah SD belajar mengetik tugas?">
+            <i class="fa-solid fa-child text-cyan"></i> Laptop Pelajar Sekolah SD
+          </button>
+          <button class="prompt-chip" data-prompt="Dilema mending pilih MacBook atau laptop Windows untuk kerja desain grafis dan video?">
+            <i class="fa-brands fa-apple text-cyan"></i> MacBook vs Windows
+          </button>
+          <button class="prompt-chip" data-prompt="Saya ingin merakit PC budget 12 juta untuk kebutuhan khusus editing video Premiere dan belajar, bagaimana racikannya?">
+            <i class="fa-solid fa-film text-purple"></i> Rakit PC Editing & Belajar
+          </button>
+        </div>
+      </div>
+
+      <!-- SIDEBAR FOOTER -->
+      <div class="sidebar-footer">
+        <button class="btn-secondary" id="btnResetChat">
+          <i class="fa-solid fa-arrow-rotate-left"></i> Mulai Sesi Baru
+        </button>
+        <p class="copyright">Sahabat Laptop & PC Solution &copy; 2026</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CHAT AREA -->
+    <main class="chat-viewport">
+      
+      <!-- TOP NAVIGATION BAR -->
+      <header class="top-nav">
+        <button class="btn-icon mobile-only" id="btnOpenSidebar" aria-label="Buka Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="consultant-status">
+          <div class="consultant-avatar-box" id="headerAvatar">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div class="consultant-info">
+            <div class="name-status">
+              <h3 id="headerSpecialistName">Aris & Dimas</h3>
+              <span class="status-indicator"><span class="status-dot"></span> Online</span>
+            </div>
+            <p id="headerSpecialistRole">Dual AI Tech Consultant Siaga</p>
+          </div>
+        </div>
+
+        <!-- SPECIALIST SELECTOR TOGGLE -->
+        <div class="specialist-mode-switcher">
+          <button class="mode-btn active" data-mode="auto" id="modeBtnAuto">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span>Auto</span>
+          </button>
+          <button class="mode-btn" data-mode="laptop" id="modeBtnLaptop">
+            <i class="fa-solid fa-laptop"></i>
+            <span>Aris (Laptop)</span>
+          </button>
+          <button class="mode-btn" data-mode="pc" id="modeBtnPC">
+            <i class="fa-solid fa-computer"></i>
+            <span>Dimas (PC)</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- MESSAGES FEED -->
+      <section class="messages-container" id="messagesContainer">
+        
+        <!-- HERO WELCOME BANNER -->
+        <div class="welcome-hero-card" id="welcomeCard">
+          <div class="welcome-badge"><i class="fa-solid fa-shield-halved"></i> Konsultasi Resmi Toko</div>
+          <h1>Selamat Datang di Sahabat Laptop & PC Solution!</h1>
+          <p class="hero-desc">
+            Pusat konsultasi teknologi terpercaya. Kami membedakan AI ahli agar Anda mendapatkan saran yang paling mendalam, akurat, dan sesuai realitas pasar bergaransi resmi.
+          </p>
+
+          <div class="consultant-showcase-grid">
+            <div class="showcase-card laptop-card" onclick="setSpecialistMode('laptop')">
+              <div class="showcase-icon"><i class="fa-solid fa-laptop"></i></div>
+              <div class="showcase-badge cyan">Spesialis Laptop</div>
+              <h3>Mas Aris</h3>
+              <p>Pakar laptop portabel, ultrabook tipis, daya tahan baterai, layar IPS/OLED 100% sRGB, dan laptop pelajar/kantor/gaming.</p>
+              <div class="showcase-cta">Konsultasi Laptop <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <div class="showcase-card pc-card" onclick="setSpecialistMode('pc')">
+              <div class="showcase-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <div class="showcase-badge green">Master Builder PC</div>
+              <h3>Mas Dimas</h3>
+              <p>Pakar rakitan desktop kustom 8 part siap nyala, soket AM4/AM5/LGA1700, bebas bottleneck, watt PSU 80+, dan melengkapi part yang sudah dibeli.</p>
+              <div class="showcase-cta">Konsultasi Rakit PC <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+          </div>
+
+          <div class="hero-guidance">
+            <span>💡 <strong>Tips Santai:</strong> Ceritakan kebutuhan Anda dengan bahasa sehari-hari. Anda tidak perlu langsung membeli, mari berdiskusi sampai puas!</span>
+          </div>
+        </div>
+
+        <!-- DYNAMIC MESSAGE BUBBLES INJECTED HERE VIA JS -->
+      </section>
+
+      <!-- BOTTOM INPUT FORM -->
+      <footer class="chat-input-area">
+        
+        <!-- QUICK PROMPT SUGGESTIONS ROW -->
+        <div class="quick-chip-tray" id="chipTray">
+          <button class="chip-item" onclick="sendQuickMessage('Saya punya budget 10 juta, tolong racikkan part sampai PC nyala!')">
+            🛠️ Rakit PC 10 Juta Siap Nyala
+          </button>
+          <button class="chip-item" onclick="sendQuickMessage('Saya sudah beli beberapa komponen, bagusnya part sisanya apa?')">
+            🧩 Melengkapi Komponen yang Ada
+          </button>
+          <button class="chip-item" onclick="sendQuickMessage('Rekomendasi laptop 7-8 jutaan untuk kuliah dan coding')">
+            💻 Laptop Mahasiswa 7-8jt
+          </button>
+          <button class="chip-item" onclick="sendQuickMessage('Laptop murah buat anak sekolah SD belajar mengetik')">
+            🎒 Laptop Anak Sekolah
+          </button>
+        </div>
+
+        <form class="input-form" id="chatForm">
+          <div class="input-wrapper">
+            <textarea 
+              id="messageInput" 
+              placeholder="Tanyakan rekomendasi laptop atau konsultasi rakit PC impian Anda... (Tekan Enter untuk kirim)" 
+              rows="1"
+              autocomplete="off"
+            ></textarea>
+            <button type="submit" class="btn-send" id="btnSend" aria-label="Kirim Pesan">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+          <div class="input-meta">
+            <span class="active-mode-label" id="activeModeLabel">
+              <i class="fa-solid fa-circle-dot text-green"></i> Mode: Auto-Detect (Aris & Dimas)
+            </span>
+            <span class="hint-text">Shift + Enter untuk baris baru</span>
+          </div>
+        </form>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 1: KATALOG LAPTOP (500 UNIT) -->
+  <!-- ===================================================================== -->
+  <div class="modal-backdrop" id="modalLaptop">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h2><i class="fa-solid fa-laptop text-cyan"></i> Katalog 500 Unit Laptop Resmi</h2>
+          <p>Seluruh unit baru bergaransi resmi distributor Indonesia (ASUS, Lenovo, Acer, Apple, HP, MSI, Advan)</p>
+        </div>
+        <button class="btn-icon" onclick="closeModal('modalLaptop')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="modal-filter-bar">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="laptopSearchInput" placeholder="Cari tipe laptop, prosesor (i5/ryzen), atau GPU (RTX/Iris)...">
+        </div>
+        <div class="brand-filter-pills" id="laptopBrandPills">
+          <button class="pill active" data-brand="">Semua Brand</button>
+          <button class="pill" data-brand="asus">ASUS</button>
+          <button class="pill" data-brand="lenovo">Lenovo</button>
+          <button class="pill" data-brand="acer">Acer</button>
+          <button class="pill" data-brand="hp">HP</button>
+          <button class="pill" data-brand="apple">Apple</button>
+          <button class="pill" data-brand="msi">MSI</button>
+          <button class="pill" data-brand="advan">Advan</button>
+        </div>
+      </div>
+
+      <div class="modal-results-info">
+        <span id="laptopResultCount">Memuat data laptop...</span>
+      </div>
+
+      <div class="modal-grid-cards" id="laptopCardsContainer">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 2: GUDANG KOMPONEN PC (542 PART) -->
+  <!-- ===================================================================== -->
+  <div class="modal-backdrop" id="modalPC">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h2><i class="fa-solid fa-server text-green"></i> Gudang 542 Komponen PC Resmi</h2>
+          <p>Stok part nyata bergaransi resmi distributor Indonesia untuk perakitan PC desktop kustom</p>
+        </div>
+        <button class="btn-icon" onclick="closeModal('modalPC')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="modal-filter-bar">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="pcSearchInput" placeholder="Cari nama part, soket (AM4/AM5/LGA1700), merk, atau seri...">
+        </div>
+        <div class="brand-filter-pills" id="pcCategoryPills">
+          <button class="pill active" data-cat="">Semua Kategori</button>
+          <button class="pill" data-cat="Processor (CPU)">CPU</button>
+          <button class="pill" data-cat="Motherboard">Motherboard</button>
+          <button class="pill" data-cat="RAM (Memory)">RAM</button>
+          <button class="pill" data-cat="VGA / Kartu Grafis">VGA / GPU</button>
+          <button class="pill" data-cat="Penyimpanan (SSD / HDD)">SSD / Storage</button>
+          <button class="pill" data-cat="Power Supply (PSU)">PSU 80+</button>
+          <button class="pill" data-cat="CPU Cooler">Cooler</button>
+          <button class="pill" data-cat="Casing PC">Casing</button>
+          <button class="pill" data-cat="Monitor">Monitor</button>
+        </div>
+      </div>
+
+      <div class="modal-results-info">
+        <span id="pcResultCount">Memuat komponen PC...</span>
+      </div>
+
+      <div class="modal-grid-cards" id="pcCardsContainer">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 3: KALKULATOR RAKIT PC 8 PART -->
+  <!-- ===================================================================== -->
+  <div class="modal-backdrop" id="modalRigBuilder">
+    <div class="modal-window max-w-xl">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h2><i class="fa-solid fa-sliders text-purple"></i> Kalkulator Simulasi Rakit PC</h2>
+          <p>Assembling 8 komponen nyata yang 100% kompatibel dan siap nyala dari stok toko</p>
+        </div>
+        <button class="btn-icon" onclick="closeModal('modalRigBuilder')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="rig-calculator-body">
+        <div class="budget-slider-control">
+          <div class="slider-header">
+            <span>Pilih Target Budget:</span>
+            <strong class="target-budget-display" id="sliderBudgetDisplay">Rp 10.000.000</strong>
+          </div>
+          <input type="range" id="rigBudgetSlider" min="4000000" max="30000000" step="500000" value="10000000">
+          <div class="budget-preset-buttons">
+            <button class="preset-btn" onclick="setSliderBudget(5000000)">Rp 5 Jt (Hemat iGPU)</button>
+            <button class="preset-btn active" onclick="setSliderBudget(10000000)">Rp 10 Jt (Sweet Spot)</button>
+            <button class="preset-btn" onclick="setSliderBudget(15000000)">Rp 15 Jt (Mid-Range)</button>
+            <button class="preset-btn" onclick="setSliderBudget(25000000)">Rp 25 Jt (Enthusiast)</button>
+          </div>
+        </div>
+
+        <div class="rig-result-wrapper" id="rigResultContainer">
+          <!-- Loaded by JS -->
+        </div>
+
+        <div class="rig-action-row">
+          <button class="btn-primary w-full" id="btnConsultThisRig">
+            <i class="fa-regular fa-comment-dots"></i> Konsultasikan Racikan Ini Bersama Mas Dimas
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Vanilla JS -->
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
