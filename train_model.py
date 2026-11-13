@@ -1,13 +1,3 @@
-"""
-SKRIP PELATIHAN MACHINE LEARNING (INTENT CLASSIFIER TOKO LAPTOP)
-===============================================================
-Skrip ini melakukan alur standar Machine Learning (ML Pipeline):
-1. Memuat dataset percakapan (Data Preparation)
-2. Pra-pemrosesan Teks & Ekstraksi Fitur (TF-IDF Vectorization)
-3. Pelatihan Model Klasifikasi (Logistic Regression / Naive Bayes)
-4. Evaluasi Akurasi (Classification Report)
-5. Menyimpan Model Hasil Pelatihan (.pkl) untuk dipakai aplikasi
-"""
 
 import os
 import sys
